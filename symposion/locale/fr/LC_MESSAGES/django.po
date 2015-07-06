@@ -1,0 +1,230 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <numahell@numajules.net>, 2015.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-05 22:18+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: cms/models.py:23
+msgid "Draft"
+msgstr "Brouillon"
+
+#: cms/models.py:24
+msgid "Public"
+msgstr "Public"
+
+#: cms/models.py:57
+msgid "Path can only contain letters, numbers and hyphens and end with /"
+msgstr ""
+"Un chemin ne peut contenir que des lettre, chiffres et tirets, et finir par /"
+
+#: conference/models.py:15
+msgid "title"
+msgstr "titre"
+
+#: conference/models.py:18 conference/models.py:58
+msgid "start date"
+msgstr "date de début"
+
+#: conference/models.py:19 conference/models.py:59
+msgid "end date"
+msgstr "date de fin"
+
+#: conference/models.py:22
+msgid "timezone"
+msgstr "timezone"
+
+#: conference/models.py:41 conference/models.py:52 sponsorship/models.py:18
+msgid "conference"
+msgstr "conférence"
+
+#: conference/models.py:42
+msgid "conferences"
+msgstr "conférences"
+
+#: conference/models.py:54 sponsorship/models.py:19 sponsorship/models.py:155
+msgid "name"
+msgstr "nom"
+
+#: conference/models.py:65
+msgid "section"
+msgstr "section"
+
+#: conference/models.py:66
+msgid "sections"
+msgstr "sections"
+
+#: proposals/models.py:71
+msgid "Name"
+msgstr "Nom"
+
+#: proposals/models.py:86
+msgid "Brief Description"
+msgstr "Description brève"
+
+#: proposals/models.py:88
+msgid ""
+"If your proposal is accepted this will be made public and printed in the "
+"program. Should be one paragraph, maximum 400 characters."
+msgstr ""
+"Si votre proposition est acceptée elle sera visible et affichée dans le "
+"programme. Doit être en un seul paragraphe de 400 caractères maximum."
+
+#: proposals/models.py:92
+msgid "Detailed Abstract"
+msgstr "Description détaillée"
+
+#: proposals/models.py:93
+msgid ""
+"Detailed outline. Will be made public if your proposal is accepted. Edit "
+"using <a href='http://daringfireball.net/projects/markdown/basics' "
+"target='_blank'>Markdown</a>."
+msgstr ""
+"Description détaillée. Sera visible si votre proposition est acceptée. "
+"Modifier en utilisant le <a href='http://daringfireball.net/projects/"
+"markdown/basics' target='_blank'>Markdown</a>."
+
+#: proposals/models.py:99
+msgid ""
+"Anything else you'd like the program committee to know when making their "
+"selection: your past experience, etc. This is not made public. Edit using <a "
+"href='http://daringfireball.net/projects/markdown/basics' "
+"target='_blank'>Markdown</a>."
+msgstr ""
+
+#: proposals/models.py:133
+msgid "Undecided"
+msgstr "Indéfinie"
+
+#: proposals/models.py:161
+msgid "Pending"
+msgstr "En attente"
+
+#: proposals/models.py:162
+msgid "Accepted"
+msgstr "Acceptée"
+
+#: proposals/models.py:163
+msgid "Declined"
+msgstr "Refusée"
+
+#: proposals/views.py:41
+#, python-brace-format
+msgid ""
+"To submit a proposal, please <a href='{0}'>log in</a> and create a speaker "
+"profile via the dashboard."
+msgstr ""
+"Pour soumettre une proposition, merci de s'<a href='{0}'>enregistrer</a> et "
+"créer un profil d'intervenant à partir du tableau de bord."
+
+#: proposals/views.py:50
+#, python-brace-format
+msgid "To submit a proposal, first <a href='{0}'>create a speaker profile</a>."
+msgstr ""
+"Pour soumettre une proposition, <a href='{0}'>créer d'abord un profil "
+"d'intervenant</a>."
+
+#: sponsorship/models.py:20
+msgid "order"
+msgstr "ordre"
+
+#: sponsorship/models.py:21
+msgid "cost"
+msgstr "montant"
+
+#: sponsorship/models.py:22 sponsorship/models.py:156
+msgid "description"
+msgstr "description"
+
+#: sponsorship/models.py:22
+msgid "This is private."
+msgstr "Ceci restera privé."
+
+#: sponsorship/models.py:26
+msgid "sponsor level"
+msgstr "niveau de partenariat"
+
+#: sponsorship/models.py:27
+msgid "sponsor levels"
+msgstr "niveaux de partenariat"
+
+#: sponsorship/models.py:38
+msgid "applicant"
+msgstr ""
+
+#: sponsorship/models.py:41
+msgid "Sponsor Name"
+msgstr "Nom du partenaire"
+
+#: sponsorship/models.py:42
+msgid "external URL"
+msgstr "URL externe"
+
+#: sponsorship/models.py:43
+msgid "annotation"
+msgstr "notes"
+
+#: sponsorship/models.py:44
+msgid "Contact Name"
+msgstr "Nom du contact"
+
+#: sponsorship/models.py:45
+msgid "Contact Email"
+msgstr "Courriel du contact"
+
+#: sponsorship/models.py:46 sponsorship/models.py:167
+msgid "level"
+msgstr "niveau"
+
+#: sponsorship/models.py:47
+msgid "added"
+msgstr "ajouté"
+
+#: sponsorship/models.py:48
+msgid "active"
+msgstr "actif"
+
+#: sponsorship/models.py:60 sponsorship/models.py:182
+msgid "sponsor"
+msgstr "partenaire"
+
+#: sponsorship/models.py:61
+msgid "sponsors"
+msgstr "partenaires"
+
+#: sponsorship/models.py:157
+msgid "type"
+msgstr "type"
+
+#: sponsorship/models.py:166 sponsorship/models.py:183
+msgid "benefit"
+msgstr "contreparties"
+
+#: sponsorship/models.py:170 sponsorship/models.py:187
+msgid "max words"
+msgstr "nombre de mots maximum"
+
+#: sponsorship/models.py:171 sponsorship/models.py:188
+msgid "other limits"
+msgstr "autres limites"
+
+#: sponsorship/models.py:192
+msgid "text"
+msgstr "texte"
+
+#: sponsorship/models.py:193
+msgid "file"
+msgstr "fichier"
