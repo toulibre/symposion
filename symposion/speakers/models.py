@@ -2,6 +2,7 @@ import datetime
 
 from django.db import models
 from django.core.urlresolvers import reverse
+from django.utils.translation import ugettext_lazy as _
 
 from django.contrib.auth.models import User
 
@@ -16,12 +17,20 @@ class Speaker(models.Model):
     ]
 
     user = models.OneToOneField(User, null=True, related_name="speaker_profile")
-    name = models.CharField(max_length=100, help_text=("As you would like it to appear in the "
-                                                       "conference program."))
-    biography = MarkupField(blank=True, help_text=("A little bit about you.  Edit using "
-                                                   "<a href='http://warpedvisions.org/projects/"
-                                                   "markdown-cheat-sheet/target='_blank'>"
-                                                   "Markdown</a>."))
+    name = models.CharField(
+        _("Name"),
+        max_length=100,
+        help_text=_("As you would like it to appear in the "
+                    "conference program.")
+    )
+    biography = MarkupField(
+        _("Biography"),
+        blank=True,
+        help_text=_("A little bit about you.  Edit using "
+                       "<a href='http://warpedvisions.org/projects/"
+                       "markdown-cheat-sheet/target='_blank'>"
+                       "Markdown</a>.")
+    )
     photo = models.ImageField(upload_to="speaker_photos", blank=True)
     annotation = models.TextField()  # staff only
     invite_email = models.CharField(max_length=200, unique=True, null=True, db_index=True)

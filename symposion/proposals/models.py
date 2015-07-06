@@ -81,7 +81,10 @@ class ProposalBase(models.Model):
 
     kind = models.ForeignKey(ProposalKind)
 
-    title = models.CharField(max_length=100)
+    title = models.CharField(
+        _("Title"),
+        max_length=100
+    )
     description = models.TextField(
         _("Brief Description"),
         max_length=400,  # @@@ need to enforce 400 in UI
@@ -95,6 +98,7 @@ class ProposalBase(models.Model):
                     "target='_blank'>Markdown</a>.")
     )
     additional_notes = MarkupField(
+        _("Additional notes"),
         blank=True,
         help_text=_("Anything else you'd like the program committee to know when making their "
                     "selection: your past experience, etc. This is not made public. Edit using "

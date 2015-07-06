@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-05 22:18+0200\n"
+"POT-Creation-Date: 2015-07-07 00:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,15 +67,27 @@ msgstr "section"
 msgid "sections"
 msgstr "sections"
 
-#: proposals/models.py:71
+#: proposals/forms.py:15
+msgid "Email address of new speaker (use their email address, not yours)"
+msgstr "Courriel du nouvel intervenant (son adresse email, pas la vôtre)"
+
+#: proposals/forms.py:30
+msgid "This email address has already been invited to your talk proposal"
+msgstr "Vous avez déjà invité un intervenant avec ce courriel"
+
+#: proposals/models.py:71 speakers/models.py:21
 msgid "Name"
 msgstr "Nom"
 
-#: proposals/models.py:86
+#: proposals/models.py:85
+msgid "Title"
+msgstr "Titre"
+
+#: proposals/models.py:89
 msgid "Brief Description"
 msgstr "Description brève"
 
-#: proposals/models.py:88
+#: proposals/models.py:91
 msgid ""
 "If your proposal is accepted this will be made public and printed in the "
 "program. Should be one paragraph, maximum 400 characters."
@@ -83,11 +95,11 @@ msgstr ""
 "Si votre proposition est acceptée elle sera visible et affichée dans le "
 "programme. Doit être en un seul paragraphe de 400 caractères maximum."
 
-#: proposals/models.py:92
+#: proposals/models.py:95
 msgid "Detailed Abstract"
 msgstr "Description détaillée"
 
-#: proposals/models.py:93
+#: proposals/models.py:96
 msgid ""
 "Detailed outline. Will be made public if your proposal is accepted. Edit "
 "using <a href='http://daringfireball.net/projects/markdown/basics' "
@@ -97,27 +109,35 @@ msgstr ""
 "Modifier en utilisant le <a href='http://daringfireball.net/projects/"
 "markdown/basics' target='_blank'>Markdown</a>."
 
-#: proposals/models.py:99
+#: proposals/models.py:101
+msgid "Additional notes"
+msgstr "Notes supplémentaires"
+
+#: proposals/models.py:103
 msgid ""
 "Anything else you'd like the program committee to know when making their "
 "selection: your past experience, etc. This is not made public. Edit using <a "
 "href='http://daringfireball.net/projects/markdown/basics' "
 "target='_blank'>Markdown</a>."
 msgstr ""
+"Toute information supplémentaire que vous souhaitez transmettre au comité "
+"pour leur sélection : votre expérience passée, etc. Ne sera pas publié. "
+"Modifier en utilisant le <a href='http://daringfireball.net/projects/"
+"markdown/basics' target='_blank'>Markdown</a>."
 
-#: proposals/models.py:133
+#: proposals/models.py:137
 msgid "Undecided"
 msgstr "Indéfinie"
 
-#: proposals/models.py:161
+#: proposals/models.py:165
 msgid "Pending"
 msgstr "En attente"
 
-#: proposals/models.py:162
+#: proposals/models.py:166
 msgid "Accepted"
 msgstr "Acceptée"
 
-#: proposals/models.py:163
+#: proposals/models.py:167
 msgid "Declined"
 msgstr "Refusée"
 
@@ -136,6 +156,41 @@ msgid "To submit a proposal, first <a href='{0}'>create a speaker profile</a>."
 msgstr ""
 "Pour soumettre une proposition, <a href='{0}'>créer d'abord un profil "
 "d'intervenant</a>."
+
+#: proposals/views.py:171
+msgid "Speaker invited to proposal."
+msgstr "Un intervenant a été invité à cette proposition."
+
+#: proposals/views.py:194
+msgid "Proposal editing closed"
+msgstr "Édition non autorisée."
+
+#: proposals/views.py:195
+msgid "Proposal editing is closed for this session type."
+msgstr "L'édition de cette proposition n'est pas autorisée pour cette session."
+
+#: speakers/models.py:23
+msgid "As you would like it to appear in the conference program."
+msgstr ""
+"Tel que vous voulez qu'il apparaisse dans le programme de la conférence."
+
+#: speakers/models.py:27
+msgid "Biography"
+msgstr "Biographie"
+
+#: speakers/models.py:29
+#, fuzzy
+#| msgid ""
+#| "Detailed outline. Will be made public if your proposal is accepted. Edit "
+#| "using <a href='http://daringfireball.net/projects/markdown/basics' "
+#| "target='_blank'>Markdown</a>."
+msgid ""
+"A little bit about you.  Edit using <a href='http://warpedvisions.org/"
+"projects/markdown-cheat-sheet/target='_blank'>Markdown</a>."
+msgstr ""
+"Description détaillée. Sera visible si votre proposition est acceptée. "
+"Modifier en utilisant le <a href='http://daringfireball.net/projects/"
+"markdown/basics' target='_blank'>Markdown</a>."
 
 #: sponsorship/models.py:20
 msgid "order"

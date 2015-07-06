@@ -168,7 +168,7 @@ def proposal_speaker_manage(request, pk):
                 )
             invitation, created = AdditionalSpeaker.objects.get_or_create(
                 proposalbase=proposal.proposalbase_ptr, speaker=speaker)
-            messages.success(request, "Speaker invited to proposal.")
+            messages.success(request, _("Speaker invited to proposal."))
             return redirect("proposal_speaker_manage", proposal.pk)
     else:
         add_speaker_form = AddSpeakerForm(proposal=proposal)
@@ -191,8 +191,8 @@ def proposal_edit(request, pk):
 
     if not proposal.can_edit():
         ctx = {
-            "title": "Proposal editing closed",
-            "body": "Proposal editing is closed for this session type."
+            "title": _("Proposal editing closed"),
+            "body": _("Proposal editing is closed for this session type.")
         }
         return render(request, "proposals/proposal_error.html", ctx)
 
