@@ -1,25 +1,34 @@
-from django import forms
+try:
+    from collections import OrderedDict
+except ImportError:
+    OrderedDict = None
 
 import account.forms
+from django import forms
+from django.utils.translation import ugettext_lazy as _
 
 
 class SignupForm(account.forms.SignupForm):
 
-    first_name = forms.CharField()
-    last_name = forms.CharField()
-    email_confirm = forms.EmailField(label="Confirm Email")
+    first_name = forms.CharField(label=_("First name"))
+    last_name = forms.CharField(label=_("Last name"))
+    email_confirm = forms.EmailField(label=_("Confirm Email"))
 
     def __init__(self, *args, **kwargs):
         super(SignupForm, self).__init__(*args, **kwargs)
-        del self.fields["username"]
-        self.fields.keyOrder = [
-            "email",
-            "email_confirm",
+        field_order = [
             "first_name",
             "last_name",
+            "email",
+            "email_confirm",
             "password",
             "password_confirm"
         ]
+        del self.fields["username"]
+        if not OrderedDict or hasattr(self.fields, "keyOrder"):
+            self.fields.keyOrder = field_order
+        else:
+            self.fields = OrderedDict((k, self.fields[k]) for k in field_order)
 
     def clean_email_confirm(self):
         email = self.cleaned_data.get("email")
