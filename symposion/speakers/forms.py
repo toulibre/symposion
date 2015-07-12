@@ -12,7 +12,11 @@ class SpeakerForm(forms.ModelForm):
         fields = [
             "name",
             "biography",
+            "organisation",
             "photo",
+            "city",
+            "need_travel",
+            "need_hosting",
         ]
         widgets = {
             "biography": MarkItUpWidget(),

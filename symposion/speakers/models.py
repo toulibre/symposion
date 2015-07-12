@@ -31,8 +31,12 @@ class Speaker(models.Model):
                        "markdown-cheat-sheet/target='_blank'>"
                        "Markdown</a>.")
     )
+    organisation = models.CharField(max_length=100, blank=True)
+    city = models.CharField(_('City'),max_length=255, blank=True)
+    need_travel = models.BooleanField(_('Need travel?'), default=False)
+    need_hosting = models.BooleanField(_('Need hosting?'), default=False)
     photo = models.ImageField(upload_to="speaker_photos", blank=True)
-    annotation = models.TextField()  # staff only
+    annotation = models.TextField(blank=True)  # staff only
     invite_email = models.CharField(max_length=200, unique=True, null=True, db_index=True)
     invite_token = models.CharField(max_length=40, db_index=True)
     created = models.DateTimeField(
