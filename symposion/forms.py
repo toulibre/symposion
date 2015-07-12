@@ -11,7 +11,7 @@ from django.utils.translation import ugettext_lazy as _
 class SignupForm(account.forms.SignupForm):
 
     first_name = forms.CharField(label=_("First name"))
-    last_name = forms.CharField(label=_("Last name"))
+    last_name = forms.CharField(label=_("Last name"), required=False)
     email_confirm = forms.EmailField(label=_("Confirm Email"))
 
     def __init__(self, *args, **kwargs):
