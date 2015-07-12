@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-07 00:28+0200\n"
+"POT-Creation-Date: 2015-07-13 01:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,6 +66,18 @@ msgstr "section"
 #: conference/models.py:66
 msgid "sections"
 msgstr "sections"
+
+#: forms.py:13
+msgid "First name"
+msgstr "Prénom"
+
+#: forms.py:14
+msgid "Last name"
+msgstr "Nom"
+
+#: forms.py:15
+msgid "Confirm Email"
+msgstr "Confirmer le courriel"
 
 #: proposals/forms.py:15
 msgid "Email address of new speaker (use their email address, not yours)"
