@@ -30,7 +30,7 @@ class Day(models.Model):
     date = models.DateField()
 
     def __unicode__(self):
-        return u"%s" % self.date
+        return u"%s / %s" % (self.date, self.schedule)
 
     class Meta:
         unique_together = [("schedule", "date")]
