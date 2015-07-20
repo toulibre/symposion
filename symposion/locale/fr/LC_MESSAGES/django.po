@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-13 01:14+0200\n"
+"POT-Creation-Date: 2015-07-20 23:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -203,6 +203,30 @@ msgstr ""
 "Description détaillée. Sera visible si votre proposition est acceptée. "
 "Modifier en utilisant le <a href='http://daringfireball.net/projects/"
 "markdown/basics' target='_blank'>Markdown</a>."
+
+#: speakers/models.py:35
+msgid "City"
+msgstr "Ville"
+
+#: speakers/models.py:36
+msgid "Need travel?"
+msgstr "Défraiement pour le trajet ?"
+
+#: speakers/models.py:37
+msgid "Need hosting?"
+msgstr "Besoin d'un hébergement ?"
+
+#: speakers/views.py:37 speakers/views.py:65
+msgid "Speaker profile created."
+msgstr "Profil d'intervenant créé."
+
+#: speakers/views.py:92
+msgid "You have been associated with all pending talk proposals"
+msgstr "Vous avez été ajouté(e) à toutes les propositions restantes."
+
+#: speakers/views.py:118
+msgid "Speaker profile updated."
+msgstr "Profil d'intervenant mis à jour."
 
 #: sponsorship/models.py:20
 msgid "order"
