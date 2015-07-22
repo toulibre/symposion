@@ -34,7 +34,15 @@ class Speaker(models.Model):
     organisation = models.CharField(max_length=100, blank=True)
     city = models.CharField(_('City'),max_length=255, blank=True)
     need_travel = models.BooleanField(_('Need travel?'), default=False)
+    travel_information = models.TextField(
+        _('Travel information'),
+        help_text=_("It's up to Toulibre to take travel tickets in advance, "
+            "so tell your constraints, your preference, or even the "
+            "travel reference you would like to take"),
+        blank=True
+    )
     need_hosting = models.BooleanField(_('Need hosting?'), default=False)
+    homestay = models.BooleanField(_('Ok for homestay ?'), default=False)
     photo = models.ImageField(upload_to="speaker_photos", blank=True)
     annotation = models.TextField(blank=True)  # staff only
     invite_email = models.CharField(max_length=200, unique=True, null=True, db_index=True)

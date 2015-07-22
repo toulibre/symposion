@@ -16,7 +16,9 @@ class SpeakerForm(forms.ModelForm):
             "photo",
             "city",
             "need_travel",
+            "travel_information",
             "need_hosting",
+            "homestay",
         ]
         widgets = {
             "biography": MarkItUpWidget(),
