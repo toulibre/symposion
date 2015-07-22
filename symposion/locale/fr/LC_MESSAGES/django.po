@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-20 23:29+0200\n"
+"POT-Creation-Date: 2015-07-22 19:10+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -191,18 +191,12 @@ msgid "Biography"
 msgstr "Biographie"
 
 #: speakers/models.py:29
-#, fuzzy
-#| msgid ""
-#| "Detailed outline. Will be made public if your proposal is accepted. Edit "
-#| "using <a href='http://daringfireball.net/projects/markdown/basics' "
-#| "target='_blank'>Markdown</a>."
 msgid ""
 "A little bit about you.  Edit using <a href='http://warpedvisions.org/"
 "projects/markdown-cheat-sheet/target='_blank'>Markdown</a>."
 msgstr ""
-"Description détaillée. Sera visible si votre proposition est acceptée. "
-"Modifier en utilisant le <a href='http://daringfireball.net/projects/"
-"markdown/basics' target='_blank'>Markdown</a>."
+"Expliquez qui vous êtes. Modifier en utilisant le <a href='http://"
+"daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a>."
 
 #: speakers/models.py:35
 msgid "City"
@@ -212,9 +206,25 @@ msgstr "Ville"
 msgid "Need travel?"
 msgstr "Défraiement pour le trajet ?"
 
-#: speakers/models.py:37
+#: speakers/models.py:38
+msgid "Travel information"
+msgstr "Information sur le trajet."
+
+#: speakers/models.py:39
+msgid ""
+"It's up to us to buy travel tickets in advance, so tell your constraints, "
+"your preference, or even the travel reference you would like to take"
+msgstr ""
+"C'est l'organisateur qui est chargé d'acheter vos billets, indiquez pour cela "
+"vos contraintes, préférences, ou même les références du billet à prendre."
+
+#: speakers/models.py:44
 msgid "Need hosting?"
 msgstr "Besoin d'un hébergement ?"
+
+#: speakers/models.py:45
+msgid "Ok for homestay?"
+msgstr "Logement chez l'habitant ?"
 
 #: speakers/views.py:37 speakers/views.py:65
 msgid "Speaker profile created."
