@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-22 19:10+0200\n"
+"POT-Creation-Date: 2015-07-27 21:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -181,6 +181,46 @@ msgstr "Édition non autorisée."
 msgid "Proposal editing is closed for this session type."
 msgstr "L'édition de cette proposition n'est pas autorisée pour cette session."
 
+#: reviews/models.py:35
+msgid "+1 — Good proposal and I will argue for it to be accepted."
+msgstr "+1 — Bonne proposition et je plaiderai pour qu'elle soit acceptée."
+
+#: reviews/models.py:36
+msgid "+0 — OK proposal, but I will not argue for it to be accepted."
+msgstr ""
+"+0 — Proposition intéressante, mais je ne me battrai pas pour qu'elle "
+"soit acceptée."
+
+#: reviews/models.py:37
+msgid "−0 — Weak proposal, but I will not argue strongly against acceptance."
+msgstr ""
+"−0 — Proposition faible, mais je ne me battrai pas contre sa "
+"validation."
+
+#: reviews/models.py:38
+msgid "−1 — Serious issues and I will argue to reject this proposal."
+msgstr ""
+"−1 — Cette proposition présente des problèmes sérieux, et je me battrai pour "
+"qu'elle soit rejetée."
+
+#: reviews/models.py:218 reviews/models.py:223
+msgid "accepted"
+msgstr "Acceptée"
+
+#: reviews/models.py:219 reviews/models.py:224
+msgid "rejected"
+msgstr "Rejetée"
+
+#: reviews/models.py:220 reviews/models.py:225 reviews/models.py:227
+#, fuzzy
+#| msgid "Undecided"
+msgid "undecided"
+msgstr "Indéfinie"
+
+#: reviews/models.py:226
+msgid "standby"
+msgstr "En attente"
+
 #: speakers/models.py:23
 msgid "As you would like it to appear in the conference program."
 msgstr ""
@@ -215,8 +255,9 @@ msgid ""
 "It's up to us to buy travel tickets in advance, so tell your constraints, "
 "your preference, or even the travel reference you would like to take"
 msgstr ""
-"C'est l'organisateur qui est chargé d'acheter vos billets, indiquez pour cela "
-"vos contraintes, préférences, ou même les références du billet à prendre."
+"C'est l'organisateur qui est chargé d'acheter vos billets, indiquez pour "
+"cela vos contraintes, préférences, ou même les références du billet à "
+"prendre."
 
 #: speakers/models.py:44
 msgid "Need hosting?"

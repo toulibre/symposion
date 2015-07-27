@@ -5,6 +5,7 @@ from decimal import Decimal
 from django.db import models
 from django.db.models import Q
 from django.db.models.signals import post_save
+from django.utils.translation import ugettext_lazy as _
 
 from django.contrib.auth.models import User
 
@@ -31,10 +32,10 @@ class Votes(object):
     MINUS_ONE = u"−1"
 
     CHOICES = [
-        (PLUS_ONE, u"+1 — Good proposal and I will argue for it to be accepted."),
-        (PLUS_ZERO, u"+0 — OK proposal, but I will not argue for it to be accepted."),
-        (MINUS_ZERO, u"−0 — Weak proposal, but I will not argue strongly against acceptance."),
-        (MINUS_ONE, u"−1 — Serious issues and I will argue to reject this proposal."),
+        (PLUS_ONE, _(u"+1 — Good proposal and I will argue for it to be accepted.")),
+        (PLUS_ZERO, _(u"+0 — OK proposal, but I will not argue for it to be accepted.")),
+        (MINUS_ZERO, _(u"−0 — Weak proposal, but I will not argue strongly against acceptance.")),
+        (MINUS_ONE, _(u"−1 — Serious issues and I will argue to reject this proposal.")),
     ]
 VOTES = Votes()
 
@@ -214,16 +215,16 @@ class ProposalResult(models.Model):
     minus_zero = models.PositiveIntegerField(default=0)
     minus_one = models.PositiveIntegerField(default=0)
     accepted = models.NullBooleanField(choices=[
-        (True, "accepted"),
-        (False, "rejected"),
-        (None, "undecided"),
+        (True, _("accepted")),
+        (False, _("rejected")),
+        (None, _("undecided")),
     ], default=None)
     status = models.CharField(max_length=20, choices=[
-        ("accepted", "accepted"),
-        ("rejected", "rejected"),
-        ("undecided", "undecided"),
-        ("standby", "standby"),
-    ], default="undecided")
+        ("accepted", _("accepted")),
+        ("rejected", _("rejected")),
+        ("undecided", _("undecided")),
+        ("standby", _("standby")),
+    ], default=_("undecided"))
 
     @classmethod
     def full_calculate(cls):
