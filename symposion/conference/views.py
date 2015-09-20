@@ -22,6 +22,8 @@ def speaker_list(request):
     if not request.user.is_staff:
         raise Http404()
 
+    speakers = Speaker.objects.all()
+
     return render(request, "conference/speaker_list.html", {
-        "speakers": Speaker.objects.filter(proposals__isnull=False).distinct(),
+        "speakers": speakers,
     })
