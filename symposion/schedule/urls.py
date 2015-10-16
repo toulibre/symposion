@@ -12,6 +12,7 @@ urlpatterns = patterns(
     url(r"^([\w\-]+)/$", "schedule_detail", name="schedule_detail"),
     url(r"^([\w\-]+)/edit/$", "schedule_edit", name="schedule_edit"),
     url(r"^([\w\-]+)/list/$", "schedule_list", name="schedule_list"),
+    url(r"^([\w\-]+)/([\w\-]+)/list/$", "schedule_list", name="schedule_list"),
     url(r"^([\w\-]+)/presentations.csv$", "schedule_list_csv",
         name="schedule_list_csv"),
     url(r"^([\w\-]+)/edit/slot/(\d+)/", "schedule_slot_edit",

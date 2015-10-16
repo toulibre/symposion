@@ -14,6 +14,7 @@ from symposion.schedule.forms import SlotEditForm, ScheduleSectionForm
 from symposion.schedule.models import Schedule, Day, Slot, Presentation, Session, SessionRole
 from symposion.schedule.timetable import TimeTable
 
+from cdl.proposals.models import ProposalCategory
 
 def fetch_schedule(slug):
     qs = Schedule.objects.all()
@@ -65,15 +66,31 @@ def schedule_detail(request, slug=None):
     return render(request, "schedule/schedule_detail.html", ctx)
 
 
-def schedule_list(request, slug=None):
+def schedule_list(request, slug=None, category_slug=None):
     schedule = fetch_schedule(slug)
+
+    categories = ProposalCategory.objects.all()
+    if category_slug:
+        category = categories.get(slug=category_slug)
+    else:
+        category = None
 
     presentations = Presentation.objects.filter(section=schedule.section)
     presentations = presentations.exclude(cancelled=True)
 
+    if category_slug:
+        results = []
+        for presentation in presentations:
+            if hasattr(presentation.proposal, "category"):
+                if presentation.proposal.category.slug == category_slug:
+                    results.append(presentation)
+        presentations = results
+
     ctx = {
         "schedule": schedule,
         "presentations": presentations,
+        "categories" : categories,
+        "category" : category or None,
     }
     return render(request, "schedule/schedule_list.html", ctx)
 
