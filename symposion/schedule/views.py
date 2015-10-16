@@ -67,13 +67,23 @@ def schedule_detail(request, slug=None):
 
 
 def schedule_list(request, slug=None, category_slug=None):
-    schedule = fetch_schedule(slug)
+    """Schedule list, presentation by category if asked.
+    """
 
     categories = ProposalCategory.objects.all()
+
+    if not slug:
+        # Display only categories
+        ctx = {
+            "categories" : categories,
+        }
+        return render(request, "schedule/base.html", ctx)
+
+    schedule = fetch_schedule(slug)
+
+    category = None
     if category_slug:
         category = categories.get(slug=category_slug)
-    else:
-        category = None
 
     presentations = Presentation.objects.filter(section=schedule.section)
     presentations = presentations.exclude(cancelled=True)

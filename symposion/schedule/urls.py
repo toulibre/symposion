@@ -3,7 +3,7 @@ from django.conf.urls import url, patterns
 
 urlpatterns = patterns(
     "symposion.schedule.views",
-    url(r"^$", "schedule_list", name="schedule_list"),
+    url(r"^$", "schedule_list", name="schedule_base"),
     url(r"^grid/$", "schedule_conference", name="schedule_conference"),
     url(r"^edit/$", "schedule_edit", name="schedule_edit"),
     url(r"^presentations.csv$", "schedule_list_csv", name="schedule_list_csv"),
