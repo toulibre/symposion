@@ -16,6 +16,7 @@ from symposion.schedule.timetable import TimeTable
 
 from cdl.proposals.models import ProposalCategory
 
+
 def fetch_schedule(slug):
     qs = Schedule.objects.all()
 
@@ -73,11 +74,8 @@ def schedule_list(request, slug=None, category_slug=None):
     categories = ProposalCategory.objects.all()
 
     if not slug:
-        # Display only categories
-        ctx = {
-            "categories" : categories,
-        }
-        return render(request, "schedule/base.html", ctx)
+        # Display only categories (from context_processor)
+        return render(request, "schedule/base.html")
 
     schedule = fetch_schedule(slug)
 
@@ -99,7 +97,6 @@ def schedule_list(request, slug=None, category_slug=None):
     ctx = {
         "schedule": schedule,
         "presentations": presentations,
-        "categories" : categories,
         "category" : category or None,
     }
     return render(request, "schedule/schedule_list.html", ctx)
