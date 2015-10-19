@@ -85,6 +85,7 @@ def schedule_list(request, slug=None, category_slug=None):
 
     presentations = Presentation.objects.filter(section=schedule.section)
     presentations = presentations.exclude(cancelled=True)
+    presentations = presentations.order_by("slot__day", "slot__start")
 
     if category_slug:
         results = []
