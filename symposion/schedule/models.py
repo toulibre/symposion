@@ -18,7 +18,7 @@ class Schedule(models.Model):
     hidden = models.BooleanField("Hide schedule from overall conference view", default=False)
 
     def __unicode__(self):
-        return u"%s Schedule" % self.section
+        return u"%s" % self.section
 
     class Meta:
         ordering = ["section"]
@@ -125,7 +125,7 @@ class Slot(models.Model):
         return Room.objects.filter(pk__in=self.slotroom_set.values("room"))
 
     def __unicode__(self):
-        return u"%s %s (%s - %s)" % (self.day, self.kind, self.start, self.end)
+        return u"%s %s (%s - %s) %s" % (self.day, self.kind, self.start, self.end, self.rooms)
 
     class Meta:
         ordering = ["day", "start", "end"]
