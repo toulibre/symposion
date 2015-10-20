@@ -9,11 +9,14 @@ admin.site.register(Room)
 admin.site.register(SlotKind)
 admin.site.register(
     Slot,
-    list_display=("day", "start", "end", "kind", "rooms")
+    list_display=("day", "content", "start", "end", "kind", "rooms"),
+    list_filter=("day",),
+    search_fields = ['content']
 )
 admin.site.register(
     SlotRoom,
-    list_display=("slot", "room")
+    list_display=("slot", "room"),
+    list_filter=("room",),
 )
 admin.site.register(Session)
 admin.site.register(SessionRole)
