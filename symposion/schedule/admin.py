@@ -11,7 +11,7 @@ admin.site.register(
     Slot,
     list_display=("day", "content", "start", "end", "kind", "rooms"),
     list_filter=("day",),
-    search_fields = ['content']
+    search_fields = ['content_ptr']
 )
 admin.site.register(
     SlotRoom,
@@ -20,4 +20,7 @@ admin.site.register(
 )
 admin.site.register(Session)
 admin.site.register(SessionRole)
-admin.site.register(Presentation)
+admin.site.register(
+    Presentation,
+    list_filter=("section",),
+)
