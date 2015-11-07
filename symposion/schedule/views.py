@@ -11,7 +11,7 @@ from django.contrib import messages
 from django.contrib.sites.models import Site
 
 from symposion.schedule.forms import SlotEditForm, ScheduleSectionForm
-from symposion.schedule.models import Schedule, Day, Slot, Presentation, Session, SessionRole
+from symposion.schedule.models import Schedule, Day, Slot, Presentation, Session, SessionRole, Room
 from symposion.schedule.timetable import TimeTable
 
 from cdl.proposals.models import ProposalCategory
@@ -257,6 +257,29 @@ def schedule_json(request):
         json.dumps({'schedule': data}),
         content_type="application/json"
     )
+
+
+def schedule_xml(request):
+
+    schedule_days = Day.objects.filter(schedule__published=True, schedule__hidden=False)
+
+    schedule = {}
+    days = []
+    for day in schedule_days:
+        days.append(day.date)
+    days = list(set(days))
+    # import pdb; pdb.set_trace()
+
+    print schedule
+
+    rooms = Room.objects.filter(schedule = day.schedule)
+    ctx = {
+        "schedule": schedule,
+        "days": days,
+    }
+    response = HttpResponse(content_type="text/xml")
+    response.write(loader.get_template("schedule/schedule.xml").render(Context(ctx)))
+    return response
 
 
 def session_list(request):

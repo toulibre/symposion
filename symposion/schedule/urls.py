@@ -18,6 +18,7 @@ urlpatterns = patterns(
     url(r"^([\w\-]+)/edit/slot/(\d+)/", "schedule_slot_edit",
         name="schedule_slot_edit"),
     url(r"^conference.json", "schedule_json", name="schedule_json"),
+    url(r"^conference.xml", "schedule_xml", name="schedule_xml"),
     url(r"^sessions/staff.txt$", "session_staff_email", name="schedule_session_staff_email"),
     url(r"^sessions/$", "session_list", name="schedule_session_list"),
     url(r"^session/(\d+)/$", "session_detail", name="schedule_session_detail"),
