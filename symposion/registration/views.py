@@ -34,6 +34,9 @@ def registration_add(request, pk):
 
     presentation = get_object_or_404(Presentation, pk=pk)
 
+    if not request.user.is_staff:
+        raise Http404()
+
     if request.method == "POST":
         form = RegistrationForm(request.POST)
         if form.is_valid():
@@ -41,7 +44,6 @@ def registration_add(request, pk):
             registration.presentation = presentation
             registration.save()
             messages.success(request, _("Registration form has been created successfully."))
-            return redirect("dashboard")
 
     else:
         form = RegistrationForm()
@@ -58,12 +60,14 @@ def registration_edit(request, pk):
     presentation = get_object_or_404(Presentation, pk=pk)
     registration = presentation.registration
 
+    if not request.user.is_staff:
+        raise Http404()
+
     if request.method == "POST":
         form = RegistrationForm(request.POST, instance=registration)
         if form.is_valid():
             form.save()
             messages.success(request, _("Registration form has been updated successfully."))
-            return redirect("dashboard")
 
     else:
         form = RegistrationForm(instance=registration)
