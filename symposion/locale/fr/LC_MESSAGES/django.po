@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <numahell@numajules.net>, 2015.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-27 21:19+0200\n"
+"POT-Creation-Date: 2015-11-08 15:37+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -181,6 +180,63 @@ msgstr "Édition non autorisée."
 msgid "Proposal editing is closed for this session type."
 msgstr "L'édition de cette proposition n'est pas autorisée pour cette session."
 
+#: registration/forms.py:12
+msgid "How much 3 + 4 makes?"
+msgstr "Combien font 3 + 4 ?"
+
+#: registration/forms.py:13
+msgid "Anti-bot"
+msgstr "Anti-robot"
+
+#: registration/models.py:14
+msgid "Softwares to be installed, version, etc."
+msgstr "Logiciels à installer, leur version, etc."
+
+#: registration/models.py:15
+msgid "Prerequistes"
+msgstr "Prérequis"
+
+#: registration/models.py:18
+msgid "Max attendees"
+msgstr "Nombre de personnes maximum"
+
+#: registration/models.py:21
+#, python-format
+msgid "Registration to %s"
+msgstr "S'inscrire à %s"
+
+#: registration/models.py:44
+msgid "Used in case of cancelling"
+msgstr "Utilisé en cas d'annulation"
+
+#: registration/models.py:45
+msgid "Email"
+msgstr "Courriel"
+
+#: registration/models.py:46
+msgid "Your name or pseudo"
+msgstr "Votre nom ou pseudo"
+
+#: registration/models.py:48
+msgid "Your project"
+msgstr "Votre projet"
+
+#: registration/models.py:51
+msgid "Interests"
+msgstr "Intérêts"
+
+#: registration/views.py:20
+msgid "You registered successfully."
+msgstr "Votre inscription est enregistrée."
+
+#: registration/views.py:43
+msgid "Registration form has been created successfully."
+msgstr "Le formulaire d'inscription a été créé."
+
+#: registration/views.py:65
+msgid "Registration form has been updated successfully."
+msgstr "Le formulaire d'inscription a été modifié."
+
 #: reviews/models.py:35
 msgid "+1 — Good proposal and I will argue for it to be accepted."
 msgstr "+1 — Bonne proposition et je plaiderai pour qu'elle soit acceptée."
@@ -188,14 +244,13 @@ msgstr "+1 — Bonne proposition et je plaiderai pour qu'elle soit acceptée."
 #: reviews/models.py:36
 msgid "+0 — OK proposal, but I will not argue for it to be accepted."
 msgstr ""
-"+0 — Proposition intéressante, mais je ne me battrai pas pour qu'elle "
-"soit acceptée."
+"+0 — Proposition intéressante, mais je ne me battrai pas pour qu'elle soit "
+"acceptée."
 
 #: reviews/models.py:37
 msgid "−0 — Weak proposal, but I will not argue strongly against acceptance."
 msgstr ""
-"−0 — Proposition faible, mais je ne me battrai pas contre sa "
-"validation."
+"−0 — Proposition faible, mais je ne me battrai pas contre sa validation."
 
 #: reviews/models.py:38
 msgid "−1 — Serious issues and I will argue to reject this proposal."
@@ -212,8 +267,6 @@ msgid "rejected"
 msgstr "Rejetée"
 
 #: reviews/models.py:220 reviews/models.py:225 reviews/models.py:227
-#, fuzzy
-#| msgid "Undecided"
 msgid "undecided"
 msgstr "Indéfinie"
 
