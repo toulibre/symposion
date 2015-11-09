@@ -1,10 +1,12 @@
-from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.http import Http404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.translation import ugettext_lazy as _
 
 from symposion.registration.forms import AttendeeForm, RegistrationForm
 from symposion.schedule.models import Presentation
+
 
 def register_to_presentation(request, pk):
     """Form to register"""
@@ -35,7 +37,8 @@ def registration_add(request, pk):
     presentation = get_object_or_404(Presentation, pk=pk)
 
     if not request.user.is_staff:
-        raise Http404()
+        if request.user.speaker_profile not in [s for s in presentation.speakers()]:
+            raise Http404()
 
     if request.method == "POST":
         form = RegistrationForm(request.POST)
@@ -61,7 +64,8 @@ def registration_edit(request, pk):
     registration = presentation.registration
 
     if not request.user.is_staff:
-        raise Http404()
+        if request.user.speaker_profile not in [s for s in presentation.speakers()]:
+            raise Http404()
 
     if request.method == "POST":
         form = RegistrationForm(request.POST, instance=registration)
